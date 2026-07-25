@@ -5,6 +5,7 @@
   <a href="https://research.neoteai.com/assets/n0-foundation-paper.pdf"><img src="https://img.shields.io/static/v1?label=Paper&message=PDF&color=red"></a>
   <a href="https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData"><img src="https://img.shields.io/static/v1?label=%F0%9F%A4%97%20Dataset&message=HuggingFace&color=yellow"></a>
   <a href="https://modelscope.cn/datasets/NeoteAI/OpenNeoData"><img src="https://img.shields.io/static/v1?label=%F0%9F%A4%96%20Dataset&message=ModelScope&color=purple"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-CC--BY--NC--SA--4.0-green"></a>
 </p>
 
 ## Overview
