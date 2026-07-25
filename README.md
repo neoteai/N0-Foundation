@@ -76,7 +76,7 @@ If you find our work useful in your research, please cite:
       title={N0-Foundation: Towards the Age of Tactile Intelligence},
       author={NeoteAI Team and TEAI Team},
       year={2026},
-      howpublished={\url{https://research.neoteai.com/assets/n0-foundation-paper.pdf}},
+      url={https://research.neoteai.com/assets/n0-foundation-paper.pdf},
       note={Technical Report}
 }
 ```
