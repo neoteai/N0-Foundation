@@ -10,7 +10,7 @@
 ## Overview
 
 <p align="center">
-  <img src="assets/teaser.png" width="100%">
+  <img src="diagrams/teaser.png" width="100%">
 </p>
 
 Contact states, local forces, and incipient slip are rarely observable from vision alone, yet they are critical for deformable object manipulation, precise assembly, delicate force control, and sustained surface interaction. **𝒩<sub>0</sub>-Foundation** (read as *Neo-Foundation*) is a tactile-centric paradigm for embodied manipulation that treats infrastructure, data, representation, and evaluation as one system rather than four separate artifacts.
@@ -24,15 +24,15 @@ Contact states, local forces, and incipient slip are rarely observable from visi
 
 | Stage | Contents | Status |
 | :--- | :--- | :---: |
-| **Dataset release** | OpenNeoData — 5,000 hour open source subset, with loaders and documentation | ✅ [Released](https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData) |
-| **NeoForce release** | Unified force based tactile representation, with model weights and inference code | 🚧 By July 31, 2026 |
+| **Dataset** | OpenNeoData — 5,000 hour open source subset, with loaders and documentation | ✅ [Released](https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData) |
+| **NeoForce** | Unified force based tactile representation, with model weights and inference code | 🚧 By July 31, 2026 |
 
 ## NeoData
 
 We build NeoData, one of the largest tactile-enabled real-world manipulation corpora to date. Every episode carries synchronized visual and tactile streams, collected across five robot platforms and the handheld 𝒩<sub>0</sub>-TacUMI device, then curated through staged quality checks and annotated with a four level task hierarchy.
 
 <p align="center">
-  <img src="assets/neodata_statistics.png" width="90%">
+  <img src="diagrams/neodata_statistics.png" width="90%">
 </p>
 
 The corpus is deliberately broad along every axis that matters for contact-rich manipulation: (a) six embodiments, with scalable handheld collection contributing the majority of trajectories and real robot teleoperation anchoring the corpus in executable behavior, (b) tactile-relevant skills such as folding, wiping, stacking, assembling, and inserting, (c) everyday scenes from tabletop and workbench to laundry and kitchen, and (d) episode durations that span both short contact primitives and long multistep interactions.
@@ -42,7 +42,7 @@ We further release **[OpenNeoData](https://huggingface.co/datasets/NeoteAIEmbodi
 ## NeoForce
 
 <p align="center">
-  <img src="assets/neoforce.png" width="90%">
+  <img src="diagrams/neoforce.png" width="90%">
 </p>
 
 Tactile hardware is fragmented, so a model built on one signal format is bound to the device that produced it. We instead describe every tactile observation as a **dense three axis force field** over the sensing surface, capturing shear and pressure in a form that is physically grounded and shared across sensors. On top of it we build **NeoForce**, which fuses chunks of RGB observations and force fields into a temporally structured representation for downstream embodied policies, supervised jointly by force field reconstruction and latent prediction.
@@ -52,7 +52,7 @@ Tactile hardware is fragmented, so a model built on one signal format is bound t
 ### NeoReal
 
 <p align="center">
-  <img src="assets/neoreal.png" width="100%">
+  <img src="diagrams/neoreal.png" width="100%">
 </p>
 
 NeoReal measures policy performance under real physical interaction. We define 10 contact-rich tasks on robots equipped with tactile fingers, covering deformable object shaping, force-guided mating, delicate grasping, sustained surface contact, cable routing, stacking, insertion, and bimanual folding. Each task comes with a standardized initial state distribution, reset protocol, and success criterion.
@@ -60,7 +60,7 @@ NeoReal measures policy performance under real physical interaction. We define 1
 ### NeoSim
 
 <p align="center">
-  <img src="assets/neosim.png" width="100%">
+  <img src="diagrams/neosim.png" width="100%">
 </p>
 
 **[NeoSim](https://github.com/neoteai/NeoSim)** provides a reproducible simulated arena for tactile-aware evaluation at scale. We build 12 contact-rich single arm and dual arm tasks that render per-contact force fields in the same format as the unified representation, so force-conditioned policies can be evaluated in simulation with the representation used for real tactile data.
