@@ -70,11 +70,10 @@ NeoReal measures policy performance under real physical interaction. We define 1
 If you find our work useful in your research, please cite:
 
 ```bibtex
-@misc{n0foundation,
-      title={N0-Foundation: Towards the Age of Tactile Intelligence},
-      author={NeoteAI Team and TEAI Team},
-      year={2026},
-      url={https://research.neoteai.com/assets/n0-foundation-paper.pdf},
-      note={Technical Report}
+@article{n0foundation2026,
+  title   = {N0-Foundation: Towards the Age of Tactile Intelligence},
+  author  = {NeoteAI Team and Fudan TEAI Team},
+  journal = {Technical Report},
+  year    = {2026}
 }
 ```
