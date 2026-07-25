@@ -22,21 +22,25 @@ Contact states, local forces, and incipient slip are rarely observable from visi
 
 Experiments across both suites show that policies benefit from the physical contact state rather than from the device-specific appearance of the tactile signal, that latent supervision improves the temporal structure of the learned tactile representation, and that the unified force representation is a compact and physically meaningful alternative to raw tactile images.
 
+## NeoData
+
+We build NeoData, one of the largest tactile-enabled real-world manipulation corpora to date. Every episode carries synchronized visual and tactile streams, collected across five robot platforms and the handheld 𝒩<sub>0</sub>-TacUMI device, then curated through staged quality checks and annotated with a four level task hierarchy. We release **OpenNeoData**, an open source subset, as an accessible entry point to the full corpus.
+
+➡️ **[huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData](https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData)**
+
 ## NeoForce
 
 <p align="center">
   <img src="assets/neoforce.png" width="90%">
 </p>
 
-Tactile hardware is fragmented: optical gel sensors, capacitive arrays, and piezoresistive skins differ in units, resolution, and sensing geometry, so a model built on any single signal format is bound to the device that produced it. 𝒩<sub>0</sub>-Foundation instead describes every tactile observation as a **dense three axis force field** over the sensing surface, `F ∈ R^(H×W×3)`, with two in-plane components that capture shear and one normal component that captures pressure. Force is physically grounded, shared across sensors, and spatially rich, so heterogeneous tactile data becomes directly comparable and jointly trainable.
-
-**NeoForce** learns a temporally structured representation on top of these force fields. It takes synchronized chunks of RGB observations and tactile force fields, embeds both into patch tokens, and fuses them with a shared transformer backbone, so the representation encodes not only the current contact state but also the recent evolution of contact. Training combines a **reconstruction objective** in force space (force field plus contact mask) with a **latent prediction objective**, in which a teacher sees the complete input and a student predicts its latents from masked inputs, including cross-modal and patch-level targets.
+Tactile hardware is fragmented, so a model built on one signal format is bound to the device that produced it. We instead describe every tactile observation as a **dense three axis force field** over the sensing surface, capturing shear and pressure in a form that is physically grounded and shared across sensors. On top of it we build **NeoForce**, which fuses chunks of RGB observations and force fields into a temporally structured representation for downstream embodied policies, supervised jointly by force field reconstruction and latent prediction.
 
 <p align="center">
   <img src="assets/neoforce_reconstruction.png" width="100%">
 </p>
 
-Across press, twist, grasp, lift, and hold — behaviors that differ substantially in contact geometry and duration — NeoForce recovers the contact region together with the intensity, shape, and extent of the contact patch. Latent prediction improves force estimation (MAE 0.070 → 0.066, RMSE 0.095 → 0.089) at no cost to contact localization (0.968 → 0.966 mIoU), and conditioning a policy on the NeoForce representation outperforms conditioning it on raw tactile images on NeoReal.
+Across contact behaviors that differ widely in geometry and duration, NeoForce recovers the contact region together with the intensity and extent of the contact patch, and conditioning a policy on this representation outperforms conditioning it on raw tactile images.
 
 ## Evaluation Suites
 
@@ -46,7 +50,7 @@ Across press, twist, grasp, lift, and hold — behaviors that differ substantial
   <img src="assets/neoreal.png" width="100%">
 </p>
 
-NeoReal measures policy performance under real physical interaction. It contains 10 contact-rich tasks executed on robots equipped with tactile fingers — Cardboard Box Folding, Bag Packing, Cable Winding, Board Wiping, Cup Stacking, Socket Plugging, Board Insertion, Bottle Standing, Fruit Collection, and Towel Folding — covering deformable object shaping, force-guided mating, delicate grasping, sustained surface contact, cable routing, stacking, insertion, and bimanual folding. Each task specifies a standardized initial state distribution, reset protocol, and binary success criterion, and results are reported over 20 randomized rollouts per task alongside a progressive score that credits partial milestone completion.
+NeoReal measures policy performance under real physical interaction. We define 10 contact-rich tasks on robots equipped with tactile fingers, covering deformable object shaping, force-guided mating, delicate grasping, sustained surface contact, cable routing, stacking, insertion, and bimanual folding. Each task comes with a standardized initial state distribution, reset protocol, and success criterion.
 
 ### NeoSim
 
@@ -54,7 +58,7 @@ NeoReal measures policy performance under real physical interaction. It contains
   <img src="assets/neosim.png" width="100%">
 </p>
 
-NeoSim provides a reproducible simulated arena for tactile-aware evaluation at scale, rendering per-contact force fields in the same three axis format as the unified representation, so that force-conditioned policies can be evaluated in simulation with the representation used for real tactile data. It contains 12 contact-rich tasks: 4 single arm tasks (Pour Ball, Unplug & Plug Charger, Plug USB, Grasp Chip) and 8 dual arm tasks (Insert Screw, Place Gears, Unstack Bowl, Cup Handover, Stack Cups, Stack Plates, Stack Bowls, Unstack Cup), reported over 100 randomized rollouts per task.
+NeoSim provides a reproducible simulated arena for tactile-aware evaluation at scale. We build 12 contact-rich single arm and dual arm tasks that render per-contact force fields in the same format as the unified representation, so force-conditioned policies can be evaluated in simulation with the representation used for real tactile data.
 
 ## Roadmap
 
