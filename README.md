@@ -1,7 +1,7 @@
 <h1 align="center">𝒩<sub>0</sub>-Foundation: Towards the Age of Tactile Intelligence</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=Paper&message=arXiv&color=red&logo=arxiv">
+  <a href="https://research.neoteai.com/assets/n0-foundation-paper.pdf"><img src="https://img.shields.io/static/v1?label=Paper&message=Technical%20Report&color=red"></a>
   <a href="http://research.neoteai.com/n0-foundation"><img src="https://img.shields.io/badge/Project-Website-blue"></a>
   <a href="https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData"><img src="https://img.shields.io/static/v1?label=%F0%9F%A4%97%20Dataset&message=HuggingFace&color=yellow"></a>
   <img src="https://img.shields.io/static/v1?label=%F0%9F%A4%96%20Dataset&message=ModelScope&color=purple">
@@ -54,23 +54,25 @@ NeoReal measures policy performance under real physical interaction. We define 1
 
 NeoSim provides a reproducible simulated arena for tactile-aware evaluation at scale. We build 12 contact-rich single arm and dual arm tasks that render per-contact force fields in the same format as the unified representation, so force-conditioned policies can be evaluated in simulation with the representation used for real tactile data.
 
+➡️ **[github.com/neoteai/NeoSim](https://github.com/neoteai/NeoSim)**
+
 ## Roadmap
 
 | Stage | Contents | Status |
 | :--- | :--- | :---: |
-| **Dataset release** | OpenNeoData — 5,000 hour open source subset, with loaders and documentation | 🚧 Coming soon |
-| **NeoForce release** | Unified force based tactile representation, with model weights and inference code | 🚧 Coming soon |
-| **NeoSim release** | Simulated evaluation suite, 12 contact-rich tasks with baselines | 🚧 Coming soon |
+| **Dataset release** | OpenNeoData — 5,000 hour open source subset, with loaders and documentation | ✅ Released |
+| **NeoForce release** | Unified force based tactile representation, with model weights and inference code | 🚧 By August 3, 2026 |
 
 ## Citation
 
 If you find our work useful in your research, please cite:
 
 ```bibtex
-@article{n0foundation,
+@misc{n0foundation,
       title={N0-Foundation: Towards the Age of Tactile Intelligence},
       author={NeoteAI Team and TEAI Team},
-      journal={arXiv preprint arXiv:XXXX.XXXXX},
-      year={2026}
+      year={2026},
+      howpublished={\url{https://research.neoteai.com/assets/n0-foundation-paper.pdf}},
+      note={Technical Report}
 }
 ```
