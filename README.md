@@ -36,12 +36,6 @@ We build NeoData, one of the largest tactile-enabled real-world manipulation cor
 
 Tactile hardware is fragmented, so a model built on one signal format is bound to the device that produced it. We instead describe every tactile observation as a **dense three axis force field** over the sensing surface, capturing shear and pressure in a form that is physically grounded and shared across sensors. On top of it we build **NeoForce**, which fuses chunks of RGB observations and force fields into a temporally structured representation for downstream embodied policies, supervised jointly by force field reconstruction and latent prediction.
 
-<p align="center">
-  <img src="assets/neoforce_reconstruction.png" width="100%">
-</p>
-
-Across contact behaviors that differ widely in geometry and duration, NeoForce recovers the contact region together with the intensity and extent of the contact patch, and conditioning a policy on this representation outperforms conditioning it on raw tactile images.
-
 ## Evaluation Suites
 
 ### NeoReal
@@ -64,7 +58,6 @@ NeoSim provides a reproducible simulated arena for tactile-aware evaluation at s
 
 | Stage | Contents | Status |
 | :--- | :--- | :---: |
-| **Pre-release** | Technical report, project page, and repository scaffolding | ✅ Available |
 | **Dataset release** | OpenNeoData — 5,000 hour open source subset, with loaders and documentation | 🚧 Coming soon |
 | **NeoForce release** | Unified force based tactile representation, with model weights and inference code | 🚧 Coming soon |
 | **NeoSim release** | Simulated evaluation suite, 12 contact-rich tasks with baselines | 🚧 Coming soon |
