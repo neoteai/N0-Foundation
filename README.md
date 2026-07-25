@@ -20,7 +20,12 @@ Contact states, local forces, and incipient slip are rarely observable from visi
 - **NeoForce** — a unified force based tactile representation. Every tactile observation is described as a dense three axis force field over the sensing surface, giving a hardware agnostic interface, and NeoForce is the visuo-tactile model that learns transferable, temporally structured tactile features from these force fields for downstream embodied policies.
 - **Standardized evaluation** — the real world **NeoReal** suite (10 tasks, 9 baselines) and the simulated **NeoSim** suite (12 tasks, 7 baselines) for contact-rich manipulation.
 
-Experiments across both suites show that policies benefit from the physical contact state rather than from the device-specific appearance of the tactile signal, that latent supervision improves the temporal structure of the learned tactile representation, and that the unified force representation is a compact and physically meaningful alternative to raw tactile images.
+### Roadmap
+
+| Stage | Contents | Status |
+| :--- | :--- | :---: |
+| **Dataset release** | OpenNeoData — 5,000 hour open source subset, with loaders and documentation | ✅ Released |
+| **NeoForce release** | Unified force based tactile representation, with model weights and inference code | 🚧 By August 3, 2026 |
 
 ## NeoData
 
@@ -59,13 +64,6 @@ NeoReal measures policy performance under real physical interaction. We define 1
 </p>
 
 **[NeoSim](https://github.com/neoteai/NeoSim)** provides a reproducible simulated arena for tactile-aware evaluation at scale. We build 12 contact-rich single arm and dual arm tasks that render per-contact force fields in the same format as the unified representation, so force-conditioned policies can be evaluated in simulation with the representation used for real tactile data.
-
-## Roadmap
-
-| Stage | Contents | Status |
-| :--- | :--- | :---: |
-| **Dataset release** | OpenNeoData — 5,000 hour open source subset, with loaders and documentation | ✅ Released |
-| **NeoForce release** | Unified force based tactile representation, with model weights and inference code | 🚧 By August 3, 2026 |
 
 ## Citation
 
