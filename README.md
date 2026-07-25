@@ -24,8 +24,8 @@ Contact states, local forces, and incipient slip are rarely observable from visi
 
 | Stage | Contents | Status |
 | :--- | :--- | :---: |
-| **Dataset release** | OpenNeoData — 5,000 hour open source subset, with loaders and documentation | ✅ Released |
-| **NeoForce release** | Unified force based tactile representation, with model weights and inference code | 🚧 By August 3, 2026 |
+| **Dataset release** | OpenNeoData — 5,000 hour open source subset, with loaders and documentation | ✅ [Released](https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData) |
+| **NeoForce release** | Unified force based tactile representation, with model weights and inference code | 🚧 By July 31, 2026 |
 
 ## NeoData
 
