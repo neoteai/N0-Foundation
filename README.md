@@ -64,7 +64,7 @@ NeoReal measures policy performance under real physical interaction. We define 1
   <img src="diagrams/neosim.png" width="100%">
 </p>
 
-**[NeoSim](https://github.com/neoteai/NeoSim)** provides a reproducible simulated arena for tactile-aware evaluation at scale. We build 12 contact-rich single arm and dual arm tasks that render per-contact force fields in the same format as the unified representation, so force-conditioned policies can be evaluated in simulation with the representation used for real tactile data.
+NeoSim provides a reproducible simulated arena for tactile-aware evaluation at scale. We build 12 contact-rich single arm and dual arm tasks that render per-contact force fields in the same format as the unified representation, so force-conditioned policies can be evaluated in simulation with the representation used for real tactile data.
 
 ## Citation
 
