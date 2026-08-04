@@ -26,7 +26,7 @@ Contact states, local forces, and incipient slip are rarely observable from visi
 | :--- | :--- | :---: |
 | **Dataset** | OpenNeoData — 5,000 hour open source subset, with loaders and documentation | ✅ [Released](https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData) |
 | **NeoForce** | Unified force based tactile representation, with training and evaluation code | ✅ [Released](./neoforce) |
-| **NeoSim** | Simulation suite: 12 contact-rich tasks, collection and evaluation pipeline | ✅ [Released](https://github.com/neoteai/NeoSim) |
+| **NeoSim** | Simulation suite: 12 contact-rich tasks, collection and evaluation pipeline | ✅ [Released](./neosim) |
 
 ## NeoData
 

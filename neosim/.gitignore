@@ -77,3 +77,4 @@ textures.zip
 /third_party/TacEx/source/tacex_assets/tacex_assets/data/**/*.npz
 /third_party/TacEx/source/tacex_assets/tacex_assets/data/**/*.png
 /third_party/TacEx/source/tacex_assets/tacex_assets/data/**/*.pt
+/third_party/TacEx/source/tacex_assets/tacex_assets/data/**/*.pth
