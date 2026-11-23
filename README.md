@@ -1,6 +1,11 @@
 <h1 align="center">𝒩<sub>0</sub>-Foundation: Towards the Age of Tactile Intelligence</h1>
 
 <p align="center">
+  <a href="https://research.neoteai.com/">NeoteAI Team · <strong>新智具身</strong></a>
+  &amp; <a href="https://teai.fudan.edu.cn/">Fudan TEAI Team</a>
+</p>
+
+<p align="center">
   <a href="https://research.neoteai.com/assets/n0-foundation-paper.pdf"><img src="https://img.shields.io/static/v1?label=Paper&message=Technical%20Report&color=red"></a>
   <a href="http://research.neoteai.com/n0-foundation"><img src="https://img.shields.io/badge/Project-Website-blue"></a>
   <a href="https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData"><img src="https://img.shields.io/static/v1?label=%F0%9F%A4%97%20Dataset&message=HuggingFace&color=yellow"></a>
