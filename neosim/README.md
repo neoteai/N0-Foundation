@@ -40,7 +40,21 @@ neosim/third_party/TacEx/source/tacex_assets/tacex_assets/data/
 
 Only the meshes, textures, USD stages, calibration packs and policy checkpoints are external. The Python, URDF and JSON files living in the same directories are code and ship with the repository.
 
-<!-- TODO(release): HuggingFace assets link -->
+Download them from [`NeoteAI/NeoSim-Assets`](https://huggingface.co/datasets/NeoteAI/NeoSim-Assets) and unpack the two trees in place:
+
+```bash
+pip install -U huggingface_hub
+python - <<'PY'
+from huggingface_hub import snapshot_download
+snapshot_download("NeoteAI/NeoSim-Assets", repo_type="dataset", local_dir="/tmp/neosim-assets")
+PY
+
+# run from the neosim/ directory
+cp -r /tmp/neosim-assets/assets/.     assets/
+cp -r /tmp/neosim-assets/tacex_data/. third_party/TacEx/source/tacex_assets/tacex_assets/data/
+```
+
+`setup.sh` runs this step for you; do it by hand only if you skipped setup or want to refresh the assets.
 
 ## Task Gallery
 

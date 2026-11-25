@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="physx_rigid_gelpad">
+  <joint name="FixedJoint" type="fixed">
+    <origin xyz="0.000099 -0.0004243 0.1029175" rpy="0. 0. -1.5707418"/>
+    <parent link="gelsight_mini_case"/>
+    <child link="gelsight_mini_gelpad"/>
+  </joint>
+  <joint name="gsmini_case_joint" type="fixed">
+    <origin xyz="-0. 0. 0." rpy="0. 0. 0."/>
+    <parent link="panda_hand"/>
+    <child link="gelsight_mini_case"/>
+  </joint>
+  <joint name="joint_gelsight_mini_case-Camera" type="fixed">
+    <origin xyz="0.000099 -0.0004243 -0.3445825" rpy="-3.1415927 0. -1.5707418"/>
+    <parent link="gelsight_mini_case"/>
+    <child link="Camera"/>
+  </joint>
+  <joint name="panda_hand_joint" type="fixed">
+    <origin xyz="0. 0. 0." rpy="1.5707964 -0.7853981 -1.5707964"/>
+    <parent link="panda_link8"/>
+    <child link="panda_hand"/>
+  </joint>
+  <joint name="panda_joint1" type="revolute">
+    <origin xyz="0. 0. 0.333" rpy="0. -1.5707963 0. "/>
+    <parent link="panda_link0"/>
+    <child link="panda_link1"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-2.8972998" upper="2.8972998" effort="87." velocity="2.1749999"/>
+  </joint>
+  <joint name="panda_joint2" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+    <parent link="panda_link1"/>
+    <child link="panda_link2"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-1.7627999" upper="1.7627999" effort="87." velocity="2.1749999"/>
+  </joint>
+  <joint name="panda_joint3" type="revolute">
+    <origin xyz="0. -0.316 0. " rpy="0. 0. -1.5707963"/>
+    <parent link="panda_link2"/>
+    <child link="panda_link3"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-2.8972998" upper="2.8972998" effort="87." velocity="2.1749999"/>
+  </joint>
+  <joint name="panda_joint4" type="revolute">
+    <origin xyz="-0. 0. -0.0825" rpy="0. 0. -1.5707964"/>
+    <parent link="panda_link3"/>
+    <child link="panda_link4"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-3.0717997" upper="-0.0698" effort="87." velocity="2.1749999"/>
+  </joint>
+  <joint name="panda_joint5" type="revolute">
+    <origin xyz="0.0000001 0.384 0.0825 " rpy="0. 0. 1.5707961"/>
+    <parent link="panda_link4"/>
+    <child link="panda_link5"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-2.8972998" upper="2.8972998" effort="12." velocity="2.6099999"/>
+  </joint>
+  <joint name="panda_joint6" type="revolute">
+    <origin xyz="0. 0. -0." rpy="0. 0. -1.5707961"/>
+    <parent link="panda_link5"/>
+    <child link="panda_link6"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.0175" upper="3.7525" effort="12." velocity="2.6099999"/>
+  </joint>
+  <joint name="panda_joint7" type="revolute">
+    <origin xyz="0. 0. -0.088" rpy="0. 0. -1.5707965"/>
+    <parent link="panda_link6"/>
+    <child link="panda_link7"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-2.8972998" upper="2.8972998" effort="12." velocity="2.6099999"/>
+  </joint>
+  <joint name="panda_joint8" type="fixed">
+    <origin xyz="0.107 0. 0. " rpy="3.1415927 0. -3.1415925"/>
+    <parent link="panda_link7"/>
+    <child link="panda_link8"/>
+  </joint>
+  <joint name="root_joint" type="fixed">
+    <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+    <parent link="panda"/>
+    <child link="panda_link0"/>
+  </joint>
+  <link name="Camera"/>
+  <link name="gelsight_mini_case">
+    <visual>
+      <origin xyz="0.000099 -0.0004243 0.1029175" rpy="0. 0. -1.5707418"/>
+      <geometry>
+        <mesh filename="meshes/case_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.000099 -0.0004243 0.1220569" rpy="0. 0. -1.5707418"/>
+      <geometry>
+        <mesh filename="meshes/plate_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.000099 -0.0004243 0.1029175" rpy="0. 0. -1.5707418"/>
+      <geometry>
+        <mesh filename="meshes/case_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.000099 -0.0004243 0.1220569" rpy="0. 0. -1.5707418"/>
+      <geometry>
+        <mesh filename="meshes/plate_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="gelsight_mini_gelpad">
+    <visual>
+      <origin xyz="-0.0006126 0.0005193 0.0240424" rpy="0. 0. 3.1415381"/>
+      <geometry>
+        <mesh filename="meshes/gelsight_mini_gelpad_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0006126 0.0005193 0.0240424" rpy="0. 0. 3.1415381"/>
+      <geometry>
+        <mesh filename="meshes/gelsight_mini_gelpad_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda"/>
+  <link name="panda_hand">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.5583305"/>
+      <inertia ixx="0.001" ixy="0." ixz="0." iyy="0.001" iyz="0." izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/panda_hand_visuals_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/panda_hand_collisions_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link0">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.8142028"/>
+      <inertia ixx="0.001" ixy="0." ixz="0." iyy="0.001" iyz="0." izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/panda_link0_visuals_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/panda_link0_collisions_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link1">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.3599997"/>
+      <inertia ixx="0.001" ixy="0." ixz="0." iyy="0.001" iyz="0." izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link1_visuals_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link1_collisions_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link2">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.3795187"/>
+      <inertia ixx="0.001" ixy="0." ixz="0." iyy="0.001" iyz="0." izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="-0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link2_visuals_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="-0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link2_collisions_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link3">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.6498823"/>
+      <inertia ixx="0.001" ixy="0." ixz="0." iyy="0.001" iyz="0." izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0. 0. 0." rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link3_visuals_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0. 0. 0." rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link3_collisions_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link4">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.6948018"/>
+      <inertia ixx="0.001" ixy="0." ixz="0." iyy="0.001" iyz="0." izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0.0000002 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link4_visuals_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0.0000002 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link4_collisions_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link5">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.9812818"/>
+      <inertia ixx="0.001" ixy="0." ixz="0." iyy="0.001" iyz="0." izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. -0." rpy="-0.0000002 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link5_visuals_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. -0." rpy="-0.0000002 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link5_collisions_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link6">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="1.1285807"/>
+      <inertia ixx="0.001" ixy="0." ixz="0." iyy="0.001" iyz="0." izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0.0000002 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link6_visuals_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0.0000002 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link6_collisions_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link7">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.4052913"/>
+      <inertia ixx="0.001" ixy="0." ixz="0." iyy="0.001" iyz="0." izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="-0.0000002 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link7_visuals_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="-0.0000002 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/panda_link7_collisions_mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link8">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.001"/>
+      <inertia ixx="0.001" ixy="0." ixz="0." iyy="0.001" iyz="0." izz="0.001"/>
+    </inertial>
+  </link>
+</robot>
